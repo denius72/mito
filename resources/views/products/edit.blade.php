@@ -52,8 +52,19 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left">
-
+                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left" action="/admin/products/editconfirm" method="POST">
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Id <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="product-id" name="product_id" required="required" class="form-control col-md-7 col-xs-12" readonly>
+                          <script> 
+                            var url = document.URL;
+                            var id = url.substring(url.lastIndexOf('=') + 1);
+                            document.getElementById("product-id").value = id; 
+                          </script>
+                        </div>
+                      </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome <span class="required">*</span>
                         </label>

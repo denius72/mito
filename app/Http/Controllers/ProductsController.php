@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\Models\Product as Product;
 use App\Models\Category as Category;
+use DB;
 
 class ProductsController {
 
@@ -84,13 +85,29 @@ class ProductsController {
 
     public function edit() {
         $id = $_GET['id'];
-        $categories = Category::all(); 
+        $nome  = isset($_GET['product_name']) ? $_GET['product_name'] : '';
+        $valor = isset($_GET['product_value']) ? $_GET['product_value'] : '';
         
+
         // Aqui vai toda a consulta com o banco de dados
         return include('../resources/views/products/edit.blade.php');
     }
 
     public function editconfirm(){
+        $id  = $_POST['product_id'];
+        $nome = $_POST['product_name'];
+        $valor = $_POST['product_value'];
+
+        DB::table('products')
+            ->where('id', $id)
+            ->update(['nome' => $nome]);
+
+        DB::table('products')
+            ->where('id', $id)
+            ->update(['valor' => $valor]);
+
+            header('Location: /admin/products');
+            exit();
 
     }
 
