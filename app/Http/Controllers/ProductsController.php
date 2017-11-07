@@ -84,10 +84,7 @@ class ProductsController {
     }
 
     public function edit() {
-        $id = $_GET['id'];
-        $nome  = isset($_GET['product_name']) ? $_GET['product_name'] : '';
-        $valor = isset($_GET['product_value']) ? $_GET['product_value'] : '';
-        
+        $products = Product::all();
 
         // Aqui vai toda a consulta com o banco de dados
         return include('../resources/views/products/edit.blade.php');
