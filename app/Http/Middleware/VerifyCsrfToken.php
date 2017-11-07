@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/admin/products/create',
         '/admin/products/createcategory',
-        '/admin/products/editconfirm'
+        '/admin/products/editconfirm',
+        '/admin/products/deleteconfirm'
     ];
 }

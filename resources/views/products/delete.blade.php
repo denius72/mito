@@ -47,42 +47,30 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Editar Um Produto</h2>
+                    <h2>Apagar Um Produto</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left" action="/admin/products/editconfirm" method="POST">
+                    <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left" action="/admin/products/deleteconfirm" method="POST">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Id <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="product-id" name="product_id" required="required" class="form-control col-md-7 col-xs-12" readonly>
+                          <script> 
+                            var url = document.URL;
+                            var id = url.substring(url.lastIndexOf('=') + 1);
+                            document.getElementById("product-id").value = id; 
+                          </script>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="product-nome" name="product_name" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
+                        <label class="control-label" for="first-name" style="margin-left: 40%;">Tem certeza que deseja deletar?</label>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Valor <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="product-valor" name="product_value" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <script> 
-                          var url = document.URL;
-                          var id = url.substring(url.lastIndexOf('=') + 1);
-                          document.getElementById("product-id").value = id; 
-                        </script>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">Salvar</button>
+                          <button class="btn btn-danger"type="submit" class="btn btn-success">Deletar</button>
                           <button class="btn btn-warning pull-right" type="button">Cancelar</button>						              
                         </div>
                       </div>

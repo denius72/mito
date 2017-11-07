@@ -111,4 +111,18 @@ class ProductsController {
 
     }
 
+    public function delete(){
+        return include('../resources/views/products/delete.blade.php');
+    }
+
+    public function deleteconfirm(){
+        $id  = $_POST['product_id'];
+
+        DB::table('products')
+            ->where('id', '=', $id)
+            ->delete();
+            header('Location: /admin/products');
+            exit();
+    }
+
 }

@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,7 +66,11 @@
                           <td><?= $product->id ?></td>
                           <td><?= $product->nome ?></td>
                           <td>R$ <?= $product->valor ?></td>
-                          <td><?= $product->idcategories ?></td>
+                          <td><?=
+                          $value = substr(DB::table('categories')->select('nome')->where('id','=',$product->idcategories)->get(), 10,-3);
+                            mb_detect_encoding($value, mb_detect_order(), true) === 'UTF-8' ? $value : mb_convert_encoding($value, 'UTF-8');
+                          
+                          ?></td>
                           <td>
                             <a href="/admin/products/show?id=<?=$product->id?>" class="btn btn-xs btn-primary">
                               <i class="fa fa-eye"></i>

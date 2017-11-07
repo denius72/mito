@@ -31,4 +31,7 @@ Route::get('/admin/products/show', 'ProductsController@show')->name('show');
 Route::get('/admin/products/edit', 'ProductsController@edit')->name('edit');
 Route::post('/admin/products/editconfirm', 'ProductsController@editconfirm')->name('editconfirm');
 
+Route::get('/admin/products/delete', 'ProductsController@delete')->name('delete');
+Route::post('/admin/products/deleteconfirm', 'ProductsController@deleteconfirm')->name('deleteconfirm');
+
 // resources/resource
