@@ -15,6 +15,8 @@ class VerifyCsrfToken extends Middleware
         '/admin/products/create',
         '/admin/products/createcategory',
         '/admin/products/editconfirm',
-        '/admin/products/deleteconfirm'
+        '/admin/products/deleteconfirm',
+        '/admin/products/getname',
+        '/admin/products/getvalue'
     ];
 }
