@@ -61,7 +61,7 @@ class ProductsController {
         $p = new Product;
         $p->nome = $nome;
         $p->valor = $valor;
-        $p->idcategories = $category;
+        $p->category_id = $category;
         $p->save();
   
         if($p->save()) {
@@ -77,10 +77,7 @@ class ProductsController {
     public function show() {
         $id = $_GET['id'];
 
-        $pdao = new ProductDAO();
-        $product = $pdao->find($id);
-
-        return include('../resources/views/products/show.blade.php');
+        return include('../resources/views/products/view.blade.php');
     }
 
     public function edit() {
@@ -91,9 +88,11 @@ class ProductsController {
     }
 
     public function editconfirm(){
+        
         $id  = $_POST['product_id'];
         $nome = $_POST['product_name'];
         $valor = $_POST['product_value'];
+        
 
         DB::table('products')
             ->where('id', $id)

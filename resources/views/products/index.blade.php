@@ -67,7 +67,8 @@
                           <td><?= $product->nome ?></td>
                           <td>R$ <?= $product->valor ?></td>
                           <td><?=
-                          substr(DB::table('categories')->select('nome')->where('id','=',$product->idcategories)->get(), 10,-3);
+                          $product->category->nome
+                          //substr(DB::table('categories')->select('nome')->where('id','=',$product->idcategories)->get(), 10,-3);
                           
                           ?></td>
                           <td>

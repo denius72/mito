@@ -53,6 +53,9 @@
                   <div class="x_content">
                     <br />
                     <form id="produtos-cadastrar" data-parsley-validate class="form-horizontal form-label-left" action="/admin/products/editconfirm" method="POST">
+                    <?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                          $id = substr($url, strrpos($url, '=') + 1); ?>
+                      
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Id <span class="required">*</span>
                         </label>
@@ -64,14 +67,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="product-nome" name="product_name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="product-nome" name="product_name" required="required" value="<?php echo (substr(DB::table('products')->select('nome')->where('id','=',$id)->get(), 10,-3)); ?>" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Valor <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="product-valor" name="product_value" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="product-valor" name="product_value" required="required" value="<?php echo (substr(DB::table('products')->select('valor')->where('id','=',$id)->get(), 11,-3)); ?>"class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <script> 

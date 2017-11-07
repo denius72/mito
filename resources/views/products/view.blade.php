@@ -84,13 +84,11 @@
                           </script>
                         </div>
                       </div>
-                        <label class="control-label" for="first-name" style="margin-left: 40%;">Tem certeza que deseja deletar?</label>
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-danger"type="submit" class="btn btn-success">Deletar</button>
-                          <a href="/admin/products/"><button class="btn btn-warning pull-right" type="button">Cancelar</button></a>			              
+                          <a href="/admin/products/"><button class="btn btn-warning pull-right" type="button">OK</button></a>			              
                         </div>
                       </div>
 

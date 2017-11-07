@@ -34,6 +34,8 @@ Route::post('/admin/products/editconfirm', 'ProductsController@editconfirm')->na
 Route::get('/admin/products/delete', 'ProductsController@delete')->name('delete');
 Route::post('/admin/products/deleteconfirm', 'ProductsController@deleteconfirm')->name('deleteconfirm');
 
-Route::post('/admin/products/getname', 'ProductsReturner@getname')->name('getname');
-Route::post('/admin/products/getvalue', 'ProductsReturner@getvalue')->name('getvalue');
-// resources/resource
+//Route::post('/admin/products/getname', 'ProductsReturner@getname')->name('getname');
+//Route::post('/admin/products/getvalue', 'ProductsReturner@getvalue')->name('getvalue');
+
+
+Route::resource('categories', 'ProductsController');
