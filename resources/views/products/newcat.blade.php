@@ -47,7 +47,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Cadastro de Produtos</h2>
+                    <h2>Cadastro de Categorias</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -64,7 +64,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button type="submit" class="btn btn-success">Salvar</button>
-                          <button class="btn btn-warning pull-right" type="button">Cancelar</button>						              
+                          <a href="/admin/products/"><button class="btn btn-warning pull-right" type="button">Cancelar</button></a>						              
                         </div>
                       </div>
                     </form>

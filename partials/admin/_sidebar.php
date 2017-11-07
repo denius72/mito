@@ -1,5 +1,5 @@
 <div class="navbar nav_title" style="border: 0;">
-    <a href="/dashboard" class="site_title"><i class="fa fa-cutlery"></i> <span>Cantinator!</span></a>
+    <a href="/home" class="site_title"><i class="fa fa-cutlery"></i> <span>Cantinator!</span></a>
 </div>
 
 <div class="clearfix"></div>
@@ -7,7 +7,7 @@
 <!-- menu profile quick info -->
 <div class="profile clearfix">
     <div class="profile_pic">
-    <img src="/img/person.jpg" alt="..." class="img-circle profile_img">
+    <img src="../../img/person.jpg" alt="..." class="img-circle profile_img">
     </div>
     <div class="profile_info">
     <span>Bem Vindo,</span>

@@ -67,8 +67,7 @@
                           <td><?= $product->nome ?></td>
                           <td>R$ <?= $product->valor ?></td>
                           <td><?=
-                          $value = substr(DB::table('categories')->select('nome')->where('id','=',$product->idcategories)->get(), 10,-3);
-                            mb_detect_encoding($value, mb_detect_order(), true) === 'UTF-8' ? $value : mb_convert_encoding($value, 'UTF-8');
+                          substr(DB::table('categories')->select('nome')->where('id','=',$product->idcategories)->get(), 10,-3);
                           
                           ?></td>
                           <td>
